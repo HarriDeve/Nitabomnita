@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nita Bomnita</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="icon" href="Img/Capi.webp">
+</head>
+<body>
+
+    <header>
+        <h1>Para la chica <3</h1>
+    </header>
+
+    <div class="dibujito">
+      <img src="Img/Multimedia.jfif" alt="">
+    </div>
+
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h2>Nita</h2>
+            <p>Queria decirte que eres una persona genial, llena de luz, divertida, linda, y de verdad me siento muy agradecido de haber coincidido contigo. Ha sido especial y me hace sonreír pensar lo que hemos compartido. Realmente espero que todo siga fluyendo de la mejor forma, porque sería genial seguir viviendo momentos juntos, sin prisas, solo disfrutando lo que pase.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h2>Sin penita ^^</h2>
+            <p>En el poco tiempo que te he conocido, me ha encantado tu personalidad y todo lo que eres. Me siento muy feliz de recibir todos los mensajitos que quieras mandarme, siempre me alegran el día</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <h2>Título 3</h2>
+            <p class="ascci">(ﾉ*ФωФ)ﾉ 🌷</p>
+        </div>
+    </div>
+
+    <div class="lorem-text">
+      <p>
+         Ya por ultimo, te dejo una cancioncita la cual me recuerda a ti de alguna forma, como te lo dije anteriormente eres una personita llena de luz y bueno esa cancion me hace pensar en muchos colorcito y wa, si que eres una chica llena de colores <3
+      </p>
+  </div>
+
+   <div class="loader" id="loader">
+      <img src="Img/giphy.gif" alt="Cargando..."> <!-- Reemplaza con tu GIF o imagen -->
+   </div>
+
+   <iframe
+      src="https://open.spotify.com/embed/track/4wajJ1o7jWIg62YqpkHC7S?utm_source=generator"
+      width="60%"
+      height="60%"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+   </iframe>
+
+   <button id="rain-button">Hazle Hazle Click <3</button>
+   
+<script>
+   window.addEventListener('load', function () {
+    // Simula un tiempo de carga (puedes quitarlo si no lo necesitas)
+    setTimeout(function () {
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById('rain-button').classList.remove('hidden'); // Muestra el botón después de la carga
+    }, 3000); // 3 segundos de carga simulada
+});
+</script>
+
+<script>
+   // Función para crear una imagen que "cae"
+   function createRainImage() {
+       const img = document.createElement('img');
+       img.src = 'Img/campanilla.png'; // URL de la imagen
+       img.classList.add('rain-image');
+
+       // Posición horizontal aleatoria
+       const randomX = Math.random() * window.innerWidth;
+       img.style.left = `${randomX}px`;
+
+       // Duración de la animación aleatoria
+       const randomDuration = Math.random() * 5 + 3; // Entre 3 y 8 segundos
+       img.style.animationDuration = `${randomDuration}s`;
+
+       // Agregar la imagen al cuerpo del documento
+       document.body.appendChild(img);
+
+       // Eliminar la imagen después de que termine la animación
+       img.addEventListener('animationend', () => {
+           img.remove();
+       });
+   }
+
+   // Evento para el botón
+   document.getElementById('rain-button').addEventListener('click', () => {
+       // Crear múltiples imágenes
+       for (let i = 0; i < 50; i++) { // Número de imágenes que "lloverán"
+           setTimeout(createRainImage, i * 100); // Espaciado entre imágenes
+       }
+   });
+</script>
+</body>
+</html>
